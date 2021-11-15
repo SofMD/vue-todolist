@@ -31,7 +31,8 @@
 
                 <input type="text"
                  placeholder="scrivi qui"
-                 v-model="newTodo">
+                 v-model="newTodo"
+                 v-on:keyup.enter="addNewTodo">
 
                 <button @click="addNewTodo">Aggiungi</button>
             </section>
