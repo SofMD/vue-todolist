@@ -36,5 +36,5 @@ const app = new Vue({
                 completed: false,
             },
         ],
-    }
+    },
 })
