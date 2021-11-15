@@ -45,8 +45,8 @@
 
                 <ul class="todo-list">
 
-                    <li class="todo" v-for="(el, index) in todos" :class="{completed: el.completed}">
-                        <span class="text  ">{{ el.text }}</span>
+                    <li class="todo" v-for="(el, index) in todos" :class="{completed: el.completed}" @click="changeComplete(index)">
+                        <span class="text">{{ el.text }}</span>
                         <i class="fas fa-trash delete" @click="todoRemove(index)"></i>
                     </li>
 

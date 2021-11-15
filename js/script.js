@@ -65,5 +65,10 @@ const app = new Vue({
             }
             
         },
+
+        // cliccando su un todo lo rendo completato o no
+        changeComplete(index) {
+            this.todos[index].completed = !this.todos[index].completed
+        }
     }
 })
