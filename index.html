@@ -29,9 +29,11 @@
             <section class="addTodo">
                 <h2>Aggiungi un nuovo to-do alla lista:</h2>
 
-                <input type="text" placeholder="scrivi qui">
+                <input type="text"
+                 placeholder="scrivi qui"
+                 v-model="newTodo">
 
-                <button>Aggiungi</button>
+                <button @click="addNewTodo">Aggiungi</button>
             </section>
 
             <!-- lista todo -->

@@ -9,7 +9,8 @@ Se la proprietà completed è uguale a true, visualizzare il testo del todo sbar
 MILESTONE 2
 Visualizzare a fianco di ogni todo una “x”: cliccando su di essa, il todo viene rimosso dalla lista.
 MILESTONE 3
-Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto
+ e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
 Bonus:
 1. Oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista.
 2. Cliccando sul testo del todo, invertire il valore della proprietà completed del todo corrispondente (se completed era uguale a false, impostare true e viceversa).
@@ -36,6 +37,8 @@ const app = new Vue({
                 completed: false,
             },
         ],
+
+        newTodo: '',
     },
 
     methods: {
@@ -43,6 +46,24 @@ const app = new Vue({
         todoRemove(index){
             console.log(index);
             this.todos.splice(index, 1)
-        }
+        },
+
+        //aggiungo nuovi to-do
+
+        addNewTodo(){
+            if(this.newTodo !== '') {
+                console.log(this.newTodo);
+
+                //aggiungo alla lista
+                this.todos.push({
+                    text: this.newTodo,
+                    completed: false,
+                });
+
+                //cancello
+                this.newTodo = '';
+            }
+            
+        },
     }
 })
