@@ -37,4 +37,12 @@ const app = new Vue({
             },
         ],
     },
+
+    methods: {
+        //cliccando sul cestino rimuovo il todo
+        todoRemove(index){
+            console.log(index);
+            this.todos.splice(index, 1)
+        }
+    }
 })
